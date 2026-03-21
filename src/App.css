@@ -1,0 +1,206 @@
+:root {
+  --primary-dark: #062C1E;
+  --primary-mid: #165132;
+  --accent-green: #379237;
+  --bg-light: #f0f2f0;
+  --text-main: #2d3436; /* 明确的深色文字 */
+}
+
+/* 基础布局 */
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+}
+
+/* 侧边栏：完全隐藏带平滑缩放 */
+.sidebar {
+  width: 280px;
+  background-color: var(--primary-dark);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.sidebar-hidden .sidebar {
+  width: 0;
+  opacity: 0;
+}
+
+.sidebar-header {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sfc-logo {
+  background: var(--accent-green);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.side-menu {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.side-menu button {
+  background: none;
+  border: none;
+  color: #bdc3c7;
+  padding: 15px;
+  text-align: left;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.3s;
+}
+
+.side-menu button.active, .side-menu button:hover {
+  background: var(--primary-mid);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* 顶部导航：高级融合感 */
+.top-nav {
+  height: 80px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 融合在左上角的切换按钮 */
+.menu-toggle {
+  background: var(--bg-light);
+  border: 1px solid #ddd;
+  color: var(--primary-dark);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.menu-toggle:hover {
+  background: var(--accent-green);
+  color: white;
+  border-color: var(--accent-green);
+}
+
+.breadcrumb {
+  font-weight: 600;
+  color: var(--primary-mid);
+  letter-spacing: 0.5px;
+}
+
+/* 内容卡片设计 */
+.main-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.page-content {
+  padding: 40px;
+}
+
+.welcome-card {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 100%);
+  border-radius: 24px;
+  padding: 40px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(6, 44, 30, 0.2);
+  margin-bottom: 40px;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.stat-box {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+  border: 1px solid #f0f0f0;
+  transition: 0.3s;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.stat-title {
+  color: #636e72;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.big-text {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.progress-bar {
+  background: #eee;
+  height: 12px;
+  border-radius: 6px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.fill {
+  background: linear-gradient(90deg, var(--primary-mid), var(--accent-green));
+  height: 100%;
+  border-radius: 6px;
+}
+
+.user-circle {
+  background: var(--primary-mid);
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
